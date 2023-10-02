@@ -3,6 +3,7 @@ import React, { useEffect } from 'react'
 import useFilterproducts from '../modules/useFilterproducts';
 import Itemslist from './Itemslist';
 import Basic from '../modules/basic';
+import Loader from '../common/Loader';
 
 
 function Products() {
@@ -11,6 +12,10 @@ function Products() {
 	
 	
   return (
+	<>
+	{sorted.length == 0 ? 
+	<Loader name="products" time={100000}/>
+	:
 	<div className='w-full min-h-screen my-10 font-NotoSansNabataean'>
 		<div>
 		<select className='w-[250px] shadow-md  font-NotoSansNabataean bg-background text-color text-md p-2 rounded-sm mx-4' onChange={(e)=>setfilter(e.target.value)} id="filter">
@@ -47,7 +52,8 @@ function Products() {
 		))
 		}
 		</div>
-	</div>
+	</div>}
+	</>
   )
 }
 

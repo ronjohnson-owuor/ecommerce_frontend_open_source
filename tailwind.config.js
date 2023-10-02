@@ -13,8 +13,8 @@ export default {
         transparent:'transparent',
         primary:'#EA4E0B',
         primary2:'#F78B00',
-        background:'#1F2937',
-        overlay: '#1F2937',
+        background:'#030122',
+        overlay: '#04011D',
         color:'#6B7280'
       },
       width:{
