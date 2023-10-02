@@ -49,12 +49,7 @@ class Apirequest {
 	
 	
 	async product_request(object,response_setter,path){
-		var response;
-		if(!this.hasToken){
-			response_setter("You are not logged in");
-			return null
-		}
-		
+		var response;		
 		 response = await laravel_request.post(path,object);
 		 if(!response.data.message){
 			response_setter("an error occurred");
