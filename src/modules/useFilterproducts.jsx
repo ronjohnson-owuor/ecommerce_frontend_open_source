@@ -5,7 +5,7 @@ import Apirequest from './apirequest';
 function useFilterproducts() {
 	
 	const request = new Apirequest();
-	const [product,setProduct] = useState(null);
+	const [product,setProduct] = useState(null || []);
 	const [filter,setFilter] = useState('');
 	
 	useEffect(()=>{
@@ -45,11 +45,14 @@ const sortProduct = () =>{
 	});		
 	}else{
 		const filtered = [];
-		product?.map((individual_product)=>{
+		if(product !== null){
+					product?.map((individual_product)=>{
 			if(individual_product.keyword.includes(filter)){
 				filtered.push(individual_product);				
 			}
 		});
+		}
+
 		sorted.push({
 			keyword:filter,
 			products:filtered
