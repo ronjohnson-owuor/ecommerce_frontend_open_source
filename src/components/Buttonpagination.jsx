@@ -10,10 +10,10 @@ function Buttonpagination({change,pages}) {
 	}
 	
   return (
-	<div className='w-[90%] flex items-center justify-center  my-2'>
+	<div key="pages_id" className='w-[90%] flex items-center justify-center  my-2'>
 		{
 			pages?.map((page)=>(
-				<button className={` ${page == current && 'bg-primary text-white border-none'} w-[50px] h-[40px] border text-color mr-1 rounded-sm border-color`} onClick={()=>changePage(page)}>{page}</button>
+				<button key={page.id} className={` ${page == current && 'bg-primary text-white border-none'} w-[50px] h-[40px] border text-color mr-1 rounded-sm border-color`} onClick={()=>changePage(page)}>{page}</button>
 			))
 		}
 	</div>
