@@ -9,7 +9,7 @@ function Adminaction() {
 	<div className='bg-background min-h-screen m-0 font-NotoSansNabataean'>
 		
 		<div className='sticky shadow-md h-[40px] sm:w-[400px] flex  items-center font-NotoSansNabataean rounded  shadow-white top-0'>
-		<a className=' mx-2 text-sm underline text-white  decoration-none hover:text-primary' href="/">back home</a>
+		<a className=' mx-2 text-sm underline text-white bg-overlay  decoration-none hover:text-primary' href="/">back home</a>
 			<select onChange={(e)=>setView_chanager(e.target.value)} className='bg-background outline-none border border-color text-color w-[150px]'>
 			<option value={null}>select something</option>
 				<option value="add_product">Add a product</option>
