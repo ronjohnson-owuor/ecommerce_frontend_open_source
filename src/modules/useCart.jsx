@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Apirequest from './apirequest';
+import { toast } from 'react-toastify';
 
 function useCart() {
 	const local_storage = localStorage;
@@ -7,10 +8,13 @@ function useCart() {
 	const request = new Apirequest();
 	const [message,setMessage] = useState('');
 	
-	// add react tostify
-	// useEffect(()=>{
-	// 	console.log(message);
-	// },[message]);
+	
+	useEffect(()=>{
+		if(message !=''){
+		toast.success(message);	
+		}
+		
+	},[message]);
 	
 	const cartEmpty = () =>{
 		return cart === null ? true : false
@@ -29,7 +33,7 @@ function useCart() {
 		}else{
 		local_storage.setItem("cart",JSON.stringify(order));		
 		}
-
+		toast.success("product added successfully👌🏿");
 	}
 	
 	
@@ -47,7 +51,7 @@ function useCart() {
 		const order = JSON.parse(cart);
 		order.filter(items => items.id == id).map(product => product.quantity = total_quantity);
 		local_storage.setItem("cart",JSON.stringify(order));
-		console.log(order);
+		toast.success("quantity changed👌🏿");
 	}
 	
 	// calculate subtotal
@@ -73,6 +77,7 @@ function useCart() {
 		const confirm_delete = confirm("are you sure you want to empty your cart");
 		if(confirm_delete){
 			local_storage.removeItem('cart');
+			toast.success("cart cleared");
 		}
 	}
 	

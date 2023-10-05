@@ -1,6 +1,7 @@
 
 import laravel_request from './laravelrequest';
 import useToken from './useToken';
+import {toast} from 'react-toastify';
 
 class Apirequest {
 	constructor(){
@@ -34,16 +35,19 @@ class Apirequest {
 			}
 			
 			if(response.status !== 200){
-				response_setter(`There was an error: ${response.data}`);	
+				
+				response_setter(`There was an error: ${response.data}`);
+				toast.error("there was an error please try again");
 			}
 			
 			response_setter(response.data.message);
+			toast.success(response.data.message);
 			
 			if(response.data.token){
 			const plainToken = response.data.token;
 			this.encrypt_token(plainToken);
 			}else{
-				console.log("check the input type....try again🙏🏿");
+				toast.error("check the input type....try again🙏🏿");
 			}
 	}
 	
@@ -53,6 +57,7 @@ class Apirequest {
 		 response = await laravel_request.post(path,object);
 		 if(!response.data.message){
 			response_setter("an error occurred");
+			toast.error("an error occured try again");
 		 }
 		 response_setter(response.data.message);
 	}
@@ -61,6 +66,7 @@ class Apirequest {
 		var response;
 		if(!this.hasToken){
 			response_setter("You need to log complete this operation");
+			toast.error("You need to log complete this operation");
 			return null
 		}
 		
@@ -71,6 +77,7 @@ class Apirequest {
 		 });
 		 if(!response.data.message){
 			response_setter("an error occurred");
+			toast.error("an error occured try again");
 		 }else{
 			response_setter(response.data.message);
 			if(response.data.clear){

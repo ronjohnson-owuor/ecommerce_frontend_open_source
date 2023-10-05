@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Apirequest from '../modules/apirequest'
+import { toast } from 'react-toastify';
 
 function Customorder() {
 	const request = new Apirequest();
@@ -8,12 +9,14 @@ function Customorder() {
 	
 	
 	useEffect(()=>{
-		console.log(message);
+		if(message != ''){
+		toast.success(message);	
+		}
+		
 	},[message]);
 	
 	const handleCustomorder = () =>{
 		if(order.current.value !== ''){
-			alert(order.current.value);
 			request.order_request({order:order.current.value},setMessage,'customorder');	
 		}
 	};

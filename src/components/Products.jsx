@@ -6,6 +6,7 @@ import Basic from '../modules/basic';
 import Loader from '../common/Loader';
 
 
+
 function Products() {
 	var {sorted,keyword,setfilter,filter} = useFilterproducts();
 	const basic = new Basic();
@@ -16,6 +17,7 @@ function Products() {
 	useEffect(()=>{
 		setinfinite_product(sorted ? sorted.slice(0,perpage):[]);
 	},[sorted]);
+	
 	
 	
 	// slice everytime the page changes
