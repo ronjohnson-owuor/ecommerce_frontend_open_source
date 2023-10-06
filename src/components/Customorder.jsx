@@ -23,11 +23,12 @@ function Customorder() {
 	
 	
   return (
-	<div className='w-full sm:w-[300px] min-h-[200px] font-NotoSansNabataean mt-10 mb-10 sm:mb-4'>
+	<div className='w-full sm:w-[300px] text-color font-NotoSansNabataean font-bold min-h-[200px] font-NotoSansNabataean mt-10 mb-10 sm:mb-10'>
 		<ToastContainer theme='dark'/>
 		<h1 className='my-2 animate-pulse'>Make a custom order here 👇</h1>
-		<textarea ref={order} className='w-full sm:w-[400px] rounded-sm text-sm h-[150px] bg-transparent border focus:bg-white focus:border-none' placeholder='please specify the price and quantity you want' id="custom_order"></textarea>
-		<button className='w-full sm:w-[400px]  h-[40px] border border-color hover:text-white text-color rounded mt-4' onClick={handleCustomorder} >place order</button>
+		<textarea ref={order} className='w-full sm:w-[400px] rounded-sm text-sm h-[150px] bg-transparent border focus:border-white border-color  focus:border-none' placeholder='please specify the price and quantity you want' id="custom_order"></textarea>
+		<button
+		 className='w-full sm:w-[400px]  h-[40px] border border-color hover:text-white hover:bg-primary hover:border-none text-color rounded mt-4' onClick={handleCustomorder} >place order</button>
 	</div>
   )
 }
