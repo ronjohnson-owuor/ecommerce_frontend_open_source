@@ -46,13 +46,7 @@ function useCart() {
 	}
 	
 	
-	// update quantity of the product 
-	const change_quantity = (id,total_quantity) =>{
-		const order = JSON.parse(cart);
-		order.filter(items => items.id == id).map(product => product.quantity = total_quantity);
-		local_storage.setItem("cart",JSON.stringify(order));
-		toast.success("quantity changed👌🏿");
-	}
+
 	
 	// calculate subtotal
 	const subtotal = () =>{
@@ -71,6 +65,14 @@ function useCart() {
 		return sub_total
 	}
 	
+		// update quantity of the product 
+		const change_quantity = (id,total_quantity) =>{
+			const order = JSON.parse(cart);
+			order.filter(items => items.id == id).map(product => product.quantity = total_quantity);
+			local_storage.setItem("cart",JSON.stringify(order));
+			toast.success("quantity changed👌🏿");
+		}
+	
 	
 	// deleteall product from the cart
 	const deleteAll = () =>{
@@ -78,6 +80,7 @@ function useCart() {
 		if(confirm_delete){
 			local_storage.removeItem('cart');
 			toast.success("cart cleared");
+			window.location.reload();
 		}
 	}
 	

@@ -5,6 +5,7 @@ import Products from '../../components/Products'
 import useFilterproducts from '../../modules/useFilterproducts';
 import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import '../../custom_styling/cursor.css'
 
 function Home() {
   // this is not working try fixing this please👇

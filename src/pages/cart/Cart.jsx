@@ -63,13 +63,8 @@ function Cart() {
           <Customorder/>
         </div>
 
-      
-      
     </div>
-    
-    
     <Footer/>
-    
   </div>
   )
 }
