@@ -2,12 +2,13 @@ import React, { useState } from 'react'
 import Addproduct from './Addproduct';
 import Editproduct from './Editproduct';
 import Vieworder from './Vieworder';
+import { ToastContainer } from 'react-toastify';
 
 function Adminaction() {
 	const [view_changer,setView_chanager] = useState("select something");
   return (
 	<div className='bg-background min-h-screen m-0 font-NotoSansNabataean'>
-		
+		<ToastContainer theme='dark'/>
 		<div className='sticky shadow-md h-[40px] sm:w-[400px] flex  items-center font-NotoSansNabataean rounded  shadow-white top-0'>
 		<a className=' mx-2 text-sm underline text-white bg-overlay  decoration-none hover:text-primary' href="/">back home</a>
 			<select onChange={(e)=>setView_chanager(e.target.value)} className='bg-background outline-none border border-color text-color w-[150px]'>

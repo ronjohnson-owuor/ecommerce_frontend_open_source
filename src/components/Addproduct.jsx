@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Apirequest from '../modules/apirequest';
+import { ToastContainer } from 'react-toastify';
 
 function Addproduct() {
   const [image,setImage] = useState(null);
@@ -43,6 +44,7 @@ function Addproduct() {
   
   return (
 	<div className='my-10  bg-transparent'>
+    <ToastContainer theme='dark'/>
     <div className='flex flex-col w- sm:w-[80%] mx-4  min-h-full '>
       <input className='w-full sm:w-[300px] h-[40px] outline-none bg-transparent my-4 rounded-md text-color border border-color' type="text" onChange={(e)=>setproduct_details((prev)=>({
         ...prev,

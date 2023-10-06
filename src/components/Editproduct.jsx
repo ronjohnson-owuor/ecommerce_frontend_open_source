@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Apirequest from '../modules/apirequest'
 import usePagination from '../modules/usePagination'
 import Buttonpagination from './Buttonpagination';
+import { ToastContainer } from 'react-toastify';
 
 function Editproduct() {
   const request = new Apirequest();
@@ -32,6 +33,7 @@ function Editproduct() {
   
   return (
 	<div>
+    <ToastContainer theme='dark'/>
     <span>{product.length} product found</span>
     {
       product.length > 0 ?

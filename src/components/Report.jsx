@@ -3,6 +3,7 @@ import Breadcrumb from '../components/Breadcrumb'
 import Footer from '../components/Footer'
 import { Link } from 'react-router-dom'
 import Apirequest from '../modules/apirequest';
+import { ToastContainer } from 'react-toastify';
 
 function Report() {
   const issue = useRef('');
@@ -26,6 +27,7 @@ function Report() {
 	<div className='bg-background w-full min-h-screen font-NotoSansNabataean' >
     <Breadcrumb pagename="report"/>
     <Link to='/' className=' mx-4 text-sm bg-primary p-2 shadow-md'>back home</Link>
+    <ToastContainer theme='dark'/>
     <form className='w-[95%] h-[550px] mx-2 sm:mx-10 flex flex-col items-center justify-center ' >
       <h1 className='font-bold text-color my-4 text-xl'>Whats your issue🤷🏿</h1>
       <p className='text-sm text-color my-2'>You can report a bug, issue,poor service etc...</p>

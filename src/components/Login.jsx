@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import Apirequest from '../modules/apirequest';
+import { ToastContainer, toast } from 'react-toastify';
 
 
 function Login() {
@@ -15,11 +16,15 @@ function Login() {
 	}
 	
 	useEffect(()=>{
-		console.log("Login message: ",message);
+		if(message){
+			toast.success("Login status: ",message);
+		}
+		
 	},[message]);
 	
   return (
 	<div>
+		<ToastContainer/>
 		<input onChange={(e)=>setlogin_details((prev)=>({
 			...prev,
 			email:e.target.value

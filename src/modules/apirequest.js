@@ -34,9 +34,12 @@ class Apirequest {
 				 response = await laravel_request.post("login",{...object});
 			}
 			
+			
+			
+			
 			if(response.status !== 200){
 				
-				response_setter(`There was an error: ${response.data}`);
+				response_setter(`There was an error  please try again`);
 				toast.error("there was an error please try again");
 			}
 			
@@ -60,13 +63,14 @@ class Apirequest {
 			toast.error("an error occured try again");
 		 }
 		 response_setter(response.data.message);
+		 
 	}
 	
 	async order_request(object,response_setter,path){
 		var response;
 		if(!this.hasToken){
-			response_setter("You need to log complete this operation");
-			toast.error("You need to log complete this operation");
+			response_setter("You are logged out");
+			toast.error("You need to log in");
 			return null
 		}
 		
@@ -75,6 +79,7 @@ class Apirequest {
 				'Authorization': `Bearer ${this.userToken}`
 			  }
 		 });
+		 
 		 if(!response.data.message){
 			response_setter("an error occurred");
 			toast.error("an error occured try again");
@@ -84,10 +89,8 @@ class Apirequest {
 				localStorage.removeItem("cart");
 				window.location.reload();
 			}
-		 }
-		 
-	}
-		
+		 } 
+	}	
   }
   
   export default Apirequest;

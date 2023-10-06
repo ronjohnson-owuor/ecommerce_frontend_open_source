@@ -1,6 +1,7 @@
 import Cookies from 'js-cookie'
 import React from 'react'
 import CryptoJS from 'crypto-js';
+import { toast } from 'react-toastify';
 
 function useToken() {
 const token = Cookies.get(import.meta.env.VITE_TOKEN_NAME);
@@ -25,6 +26,8 @@ const encrypt_token = (data) =>{
 
 const delete_token = () =>{
 	Cookies.remove(import.meta.env.VITE_TOKEN_NAME);
+	toast.success("you are logged out");
+	window.location.reload();
 }
 
 

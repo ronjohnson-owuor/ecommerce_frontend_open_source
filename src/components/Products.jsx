@@ -47,7 +47,7 @@ function Products() {
   return (
 	<>
 	{sorted.length == 0 ? 
-	<Loader name="products" time={1000}/>
+	<Loader name="products" time={100000}/>
 	:
 	<div className='w-full min-h-screen my-10 font-NotoSansNabataean'>
 		<div>

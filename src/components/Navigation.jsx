@@ -41,7 +41,7 @@ export default function Navigation() {
 			className='text-primary2 font-extrabold mx-2 font-NotoSansNabataean text-xl sm:text-4xl cursor-pointer'>Lynne</h1>
 		</div>
 		<div className='w-[100px] sm:w-[400px] md:w-1/3 h-full relative flex items-center'>
-			<input title='search bar' onChange={(e)=>setSearch(e.target.value)}  className='w-full rounded-sm hover:shadow-sm hover:shadow-primary bg-transparent h-[40px] shadow-xl pl-2 outline-none text-color' type="text" placeholder='search...' />
+			<input title='search bar' onChange={(e)=>setSearch(e.target.value)}  className='w-full rounded-sm  hover:border hover:border-primary bg-transparent h-[40px] shadow-xl pl-2 outline-none text-color' type="text" placeholder='type  something...' />
 			<br />
 				<div className={`w-[300px] absolute top-[100%] l-0 min-h-0 max-h-[400px] shadow-md z-10  bg-overlay ${filtered.length > 4 && 'overflow-y-scroll'}`}>
 						{

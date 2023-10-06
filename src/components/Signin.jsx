@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Apirequest from '../modules/apirequest';
+import { ToastContainer, toast } from 'react-toastify';
 
 function Signin() {
 	const api_request = new Apirequest();
@@ -14,14 +15,16 @@ function Signin() {
 	
 	
 	useEffect(()=>{
-		console.log(message);
+		if (message){
+			toast.success(message);
+		}
 	},[message]);
 	
 	
-	/* this is the start of input validation */
+	/* this is the start of input validation more validation will be done on the backend */
 	
 	function validatesignin_data(signindata){
-		const flag = true;
+		let flag = true;
 		// username validation
 		let username_correct = true;
 		for(const char of signindata['fullname']){
@@ -31,11 +34,11 @@ function Signin() {
 			}
 		}
 		if (!username_correct || signindata['fullname'].length == 0 ){
-			alert("USERNAME ERROR:No spaces in the name use _ (underscore) instead");
+			toast.error("USERNAME ERROR: No spaces allowed in the username");
 		}
 		
 		
-		// phone number  and location
+		// valid phone number checker
 		function isPhoneNumberValid(phoneNumber) {
 			const allowed = ['+', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 			for (const char of phoneNumber) {
@@ -45,17 +48,23 @@ function Signin() {
 			}
 			return true;
 		  }
+		  
+		  
 		if (!isPhoneNumberValid(signindata['phone_number']) || signindata['phone_number'].length == 0) {
-			alert("PHONE ERROR: please enter a valid phone number!")
+			toast.error("PHONE ERROR:enter valid phone number")
 			flag = false;
 		}
 		
+		// location validation
 		if(!signindata['location'].includes(",")){
 			flag = false;
-			alert("LOCATION ERROR:please follow the formart eg: Ruaka,kiambu")
+			toast.error("LOCATION ERROR:follow this formart 👉🏿 Ruaka,kiambu")
 		}
 		
-		// send to the server
+		
+		// send to the server if the simple validation is passed 
+		// more intense validation will be done on the server side of the application
+		
 		if (flag){
 			api_request.login_and_signup(signin_data,setMessage,false,true);	
 		}
@@ -69,6 +78,7 @@ function Signin() {
 	
   return (
 	<div className='w-full font-NotoSansNabataean px-4 '>
+		<ToastContainer theme='dark'/>
 		<input  className='w-[90%] h-[40px] bg-transparent border text-color text-sm my-2 outline-none rounded focus:border-primary' onChange={(e)=>setsignin_data((prev)=>({
 			...prev,
 			fullname: e.target.value
