@@ -57,7 +57,9 @@ const sortProduct = () =>{
 			keyword:filter,
 			products:filtered
 		});
+	
 	}
+	console.log(sorted);
 	return sorted;
 }
 

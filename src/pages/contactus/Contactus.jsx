@@ -32,14 +32,14 @@ function ContactUs() {
   return (
     <div className="min-h-screen bg-background font-NotoSansNabataean text-color">
 		<div className='w-full flex items-center justify-center flex-col'>
-      	<h2 className='text-3xl font-bold  mt-4 mb-2'>Contact Us</h2>
+      	<h2 className='text-3xl font-bold  mt-4 mb-2 overflow-hidden'>Talk to us</h2>
           <textarea
             id="message"
             name="message"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             rows="4"
-			className='w-[400px] h-[200px]'
+			className='w-[400px] h-[200px] border'
 			placeholder='enter your message'
             required
           ></textarea>

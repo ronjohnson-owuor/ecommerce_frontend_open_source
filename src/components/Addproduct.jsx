@@ -34,7 +34,7 @@ function Addproduct() {
       form_data.append('product_keyword',product_details.product_keyword);
       form_data.append('image',product_details.image);
       // send data to the server
-      request.product_request(form_data,setserver_message,"addproduct");
+      request.order_request(form_data,setserver_message,"addproduct");
   }
   
   

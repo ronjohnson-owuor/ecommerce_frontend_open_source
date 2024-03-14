@@ -7,15 +7,15 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        NotoSansNabataean: ['Noto Sans Nabataean', 'cursive'],
+        roboto: ['roboto', 'cursive'],
       },
       colors:{
         transparent:'transparent',
-        primary:'#EA4E0B',
-        primary2:'#F78B00',
-        background:'#030122',
-        overlay: '#04011D',
-        color:'#6B7280'
+        primary:'#8B008B',
+        primary2:'#710193',
+        background:'#FFF',
+        overlay: '#eee',
+        color:'#A9A9A9'
       },
       width:{
         btn_w:'100px',

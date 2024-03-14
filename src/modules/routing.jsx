@@ -1,4 +1,5 @@
 import Accounts from "../components/Accounts";
+import Customorder from "../components/Customorder";
 import Report from "../components/Report";
 import About from "../pages/about/About";
 import Admin from "../pages/admin/Admin";
@@ -15,6 +16,10 @@ const appRoutes = [
 	{
 		path:'/cart',
 		element:<Cart/>
+	},
+	{
+		path:'/custom',
+		element:<Customorder/>
 	},
 	{
 		path:'/admin',

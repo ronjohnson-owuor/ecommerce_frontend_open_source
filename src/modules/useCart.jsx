@@ -70,7 +70,6 @@ function useCart() {
 			const order = JSON.parse(cart);
 			order.filter(items => items.id == id).map(product => product.quantity = total_quantity);
 			local_storage.setItem("cart",JSON.stringify(order));
-			toast.success("quantity changed👌🏿");
 		}
 	
 	

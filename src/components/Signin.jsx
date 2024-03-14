@@ -77,28 +77,28 @@ function Signin() {
 	
 	
   return (
-	<div className='w-full font-NotoSansNabataean px-4 '>
+	<div className='w-full font-NotoSansNabataean px-4'>
 		<ToastContainer theme='dark'/>
-		<input  className='w-[90%] h-[40px] bg-transparent border text-color text-sm my-2 outline-none rounded focus:border-primary' onChange={(e)=>setsignin_data((prev)=>({
+		<input  className='w-[90%] h-[40px] bg-transparent border text-color text-sm my-2 outline-none rounded focus:border-primary p-2' onChange={(e)=>setsignin_data((prev)=>({
 			...prev,
 			fullname: e.target.value
 		}))} type="text" placeholder='enter your full name' />
-		<input  className='w-[90%] h-[40px] bg-transparent border text-color text-sm my-2 outline-none rounded focus:border-primary' onChange={(e)=>setsignin_data((prev)=>({
+		<input  className='w-[90%] h-[40px] bg-transparent border text-color text-sm my-2 outline-none rounded focus:border-primary p-2' onChange={(e)=>setsignin_data((prev)=>({
 			...prev,
 			email: e.target.value
 		}))} type="email" placeholder='your email' />
-		<input  className='w-[90%] h-[40px] bg-transparent border text-color text-sm my-2 outline-none rounded focus:border-primary' onChange={(e)=>setsignin_data((prev)=>({
+		<input  className='w-[90%] h-[40px] bg-transparent border text-color text-sm my-2 outline-none rounded focus:border-primary p-2' onChange={(e)=>setsignin_data((prev)=>({
 			...prev,
 			password: e.target.value
 		}))} type="password" placeholder='enter your password' />
 		
-		<input  className='w-[90%] h-[40px] bg-transparent border text-color text-sm my-2 outline-none rounded focus:border-primary' onChange={(e) =>
+		<input  className='w-[90%] h-[40px] bg-transparent border text-color text-sm my-2 outline-none rounded focus:border-primary p-2' onChange={(e) =>
     setsignin_data((prev) => ({
       ...prev,
       location: e.target.value
     }))
   } type="text" placeholder='enter location eg Ruaka,kiambu' />
-  		<input  className='w-[90%] h-[40px] bg-transparent border text-color text-sm my-2 outline-none rounded focus:border-primary' onChange={(e) =>
+  		<input  className='w-[90%] h-[40px] bg-transparent border text-color text-sm my-2 outline-none rounded focus:border-primary p-2' onChange={(e) =>
     setsignin_data((prev) => ({
       ...prev,
       phone_number: e.target.value
