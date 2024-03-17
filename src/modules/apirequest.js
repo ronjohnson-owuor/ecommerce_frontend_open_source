@@ -45,7 +45,6 @@ class Apirequest {
   }
 
   async product_request(object, response_setter, path) {
-	console.log(this.userToken);
     var response;
     response = await laravel_request.post(path, object);
     if (!response.data.message) {

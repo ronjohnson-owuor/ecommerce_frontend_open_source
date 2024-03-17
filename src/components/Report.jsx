@@ -30,7 +30,7 @@ function Report() {
       <h1 className='font-bold text-primary my-4 text-xl'>Whats your issue🤷🏿</h1>
       <p className='text-sm text-color my-2'>You can report a bug, issue,poor service etc...</p>
       <textarea className='w-full  sm:w-[400px] text-sm h-[150px] bg-transparent border outline-none focus:bg-white focus:border-none p-2' ref={issue} placeholder='write your problem here '></textarea>
-		<button className='w-full h-[40px] sm:w-[400px] border border-color hover:text-white text-color rounded mt-4' onClick={handlereport} >submit</button>
+		<button className='w-full h-[40px] sm:w-[400px] border border-color hover:text-white text-color rounded mt-4 bg-primary' onClick={handlereport} >submit</button>
       <p className='my-4 text-primary2 text-sm'>we stand to be corrected: <a className='animate-bounce' href="/"> 👉🏿back home</a></p>
     </form>
     <Footer/>
